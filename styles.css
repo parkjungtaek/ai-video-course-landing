@@ -665,9 +665,10 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
    TRUST / LOGOS
    ======================================================================== */
 
-/* ===== AI TOOLS GRID ===== */
+/* ===== AI TOOLS — CARD NEWS CAROUSEL ===== */
 .ai-tools {
   padding: clamp(56px, 8vw, 96px) 0 clamp(40px, 6vw, 72px);
+  overflow: hidden;
 }
 .ai-tools__caption {
   text-align: center;
@@ -678,119 +679,146 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   text-transform: uppercase;
   margin-bottom: 48px;
 }
-.ai-tools-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
-  gap: 20px;
-  max-width: 900px;
+
+/* Carousel wrapper */
+.card-news {
+  position: relative;
+  max-width: 720px;
   margin: 0 auto;
 }
-.ai-tool-card {
+
+/* Track */
+.card-news__track {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 28px 16px 22px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  will-change: transform;
+}
+
+/* Individual slide */
+.card-news__slide {
+  min-width: 100%;
+  flex-shrink: 0;
+  border-radius: 24px;
+  overflow: hidden;
   background: var(--color-bg-elevated-3);
   border: 1px solid var(--color-border-subtle);
-  border-radius: 20px;
-  cursor: default;
-  animation: float-card 4s ease-in-out infinite;
-  animation-delay: var(--float-delay, 0s);
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.5s ease, transform 0.5s ease,
-              background 0.3s ease, box-shadow 0.4s ease, border-color 0.3s ease;
+  transform: scale(0.92);
+  transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease;
 }
-.ai-tool-card.visible {
+.card-news__slide.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
-.ai-tool-card:hover {
-  background: var(--color-bg-elevated-4);
-  border-color: rgba(6, 182, 212, 0.35);
+.card-news__slide:hover {
   box-shadow:
-    0 0 24px rgba(6, 182, 212, 0.15),
-    0 0 60px rgba(6, 182, 212, 0.06),
-    0 12px 40px -10px rgba(0, 0, 0, 0.6);
-  transform: translateY(-8px) scale(1.05);
-  animation-play-state: paused;
+    0 0 30px rgba(6, 182, 212, 0.1),
+    0 20px 60px -15px rgba(0, 0, 0, 0.5);
+  border-color: rgba(6, 182, 212, 0.25);
 }
-.ai-tool-card__img-wrap {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin-bottom: 14px;
-  border: 2px solid var(--color-border-subtle);
-  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), border-color 0.3s ease, box-shadow 0.3s ease;
-}
-.ai-tool-card:hover .ai-tool-card__img-wrap {
-  transform: rotate(5deg) scale(1.1);
-  border-color: rgba(6, 182, 212, 0.5);
-  box-shadow: 0 0 16px rgba(6, 182, 212, 0.3);
-}
-.ai-tool-card__img {
+
+/* Image */
+.card-news__img {
   width: 100%;
-  height: 100%;
+  height: 320px;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
-.ai-tool-card:hover .ai-tool-card__img {
-  transform: scale(1.15);
+.card-news__slide:hover .card-news__img {
+  transform: scale(1.04);
 }
-.ai-tool-card__name {
-  font-size: 14px;
+
+/* Body */
+.card-news__body {
+  padding: 28px 32px 32px;
+}
+.card-news__title {
+  font-size: 22px;
   font-weight: var(--fw-semibold);
   color: var(--color-text-primary);
-  margin-bottom: 4px;
-  letter-spacing: -0.01em;
+  margin-bottom: 10px;
+  letter-spacing: -0.02em;
 }
-.ai-tool-card__desc {
-  font-size: 11.5px;
-  color: var(--color-text-tertiary);
-  line-height: 1.4;
+.card-news__desc {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
   font-weight: var(--fw-regular);
 }
 
-@keyframes float-card {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+/* Navigation arrows */
+.card-news__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--color-border-subtle);
+  background: rgba(8, 9, 10, 0.85);
+  color: var(--color-text-primary);
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
-.ai-tool-card:hover {
-  animation: none;
-  transform: translateY(-8px) scale(1.05);
+.card-news__arrow:hover {
+  background: var(--color-bg-elevated-4);
+  border-color: rgba(6, 182, 212, 0.4);
+  transform: translateY(-50%) scale(1.1);
+}
+.card-news__arrow--prev { left: -56px; }
+.card-news__arrow--next { right: -56px; }
+
+/* Dots indicator */
+.card-news__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.card-news__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-border-subtle);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+}
+.card-news__dot.active {
+  background: rgba(6, 182, 212, 0.8);
+  width: 24px;
+  border-radius: 4px;
 }
 
-/* Responsive: 2 columns on tablet */
-@media (max-width: 768px) {
-  .ai-tools-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    max-width: 100%;
-  }
-  .ai-tool-card {
-    padding: 20px 10px 16px;
-  }
-  .ai-tool-card__img-wrap {
-    width: 52px;
-    height: 52px;
+/* Responsive */
+@media (max-width: 860px) {
+  .card-news__arrow--prev { left: 12px; }
+  .card-news__arrow--next { right: 12px; }
+  .card-news__arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 20px;
   }
 }
-/* Responsive: horizontal scroll on small mobile */
-@media (max-width: 480px) {
-  .ai-tools-grid {
-    display: flex;
-    overflow-x: auto;
-    gap: 12px;
-    padding-bottom: 12px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
+@media (max-width: 600px) {
+  .card-news__img {
+    height: 200px;
   }
-  .ai-tool-card {
-    min-width: 140px;
-    flex-shrink: 0;
-    scroll-snap-align: start;
+  .card-news__body {
+    padding: 20px 20px 24px;
+  }
+  .card-news__title {
+    font-size: 18px;
+  }
+  .card-news__desc {
+    font-size: 13px;
   }
 }
 

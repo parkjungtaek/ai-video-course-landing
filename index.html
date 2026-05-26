@@ -406,101 +406,111 @@
       </div>
     </section>
 
-    <!-- ============ AI TOOLS GRID ============ -->
+    <!-- ============ AI TOOLS CAROUSEL (카드뉴스) ============ -->
     <section class="ai-tools">
       <div class="container">
         <p class="ai-tools__caption">수업에서 직접 다루는 AI 영상 도구</p>
-        <div class="ai-tools-grid">
 
-          <div class="ai-tool-card" style="--float-delay: 0s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Sora">
-            </div>
-            <h4 class="ai-tool-card__name">Sora</h4>
-            <p class="ai-tool-card__desc">OpenAI 텍스트-투-비디오</p>
+        <div class="card-news">
+          <button class="card-news__arrow card-news__arrow--prev" aria-label="이전">&#8249;</button>
+
+          <div class="card-news__track">
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Sora">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Sora</h3>
+                <p class="card-news__desc">OpenAI가 개발한 텍스트-투-비디오 AI. 간단한 문장 입력만으로 최대 1분 길이의 고품질 영상을 생성합니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Runway">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Runway</h3>
+                <p class="card-news__desc">실시간 AI 영상 편집 플랫폼. Gen-3 엔진으로 이미지와 텍스트에서 영상을 즉시 생성하고 편집합니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Pika">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Pika</h3>
+                <p class="card-news__desc">3초만에 AI 영상 생성. 이미지를 넣으면 자연스러운 모션을 자동 추가하는 초간단 영상 제작 도구입니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/5952651/pexels-photo-5952651.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Kling">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Kling (클링)</h3>
+                <p class="card-news__desc">중국 최강 AI 영상 생성기. 최대 2분 길이의 고해상도 영상을 생성하며 물리 법칙 기반 움직임이 특징입니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="VEO3">
+              <div class="card-news__body">
+                <h3 class="card-news__title">VEO3</h3>
+                <p class="card-news__desc">구글 DeepMind의 차세대 영상 AI. 대화형 프롬프트로 시네마틱 영상과 사운드를 동시에 생성합니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/6320/smartphone-vintage-technology-music.jpg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Suno AI">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Suno AI (수노)</h3>
+                <p class="card-news__desc">텍스트 한 줄로 음악 자동 생성. 보컬, 악기, 장르까지 커스텀 가능한 AI 음악 제작 플랫폼입니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="HiXField">
+              <div class="card-news__body">
+                <h3 class="card-news__title">HiXField (힉스필드)</h3>
+                <p class="card-news__desc">물리 기반 AI 모션 생성 도구. 단일 이미지에서 자연스러운 인물 움직임과 표정 변화를 만들어냅니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="ComfyUI">
+              <div class="card-news__body">
+                <h3 class="card-news__title">ComfyUI</h3>
+                <p class="card-news__desc">노드 기반 AI 워크플로우 빌더. 이미지/영상 생성 파이프라인을 시각적으로 설계하고 자동화합니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="CapCut">
+              <div class="card-news__body">
+                <h3 class="card-news__title">CapCut</h3>
+                <p class="card-news__desc">AI 자동 편집 도구. 자막 생성, 장면 전환, 리듬 맞춤 편집까지 원클릭으로 영상 완성을 도와줍니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="Midjourney">
+              <div class="card-news__body">
+                <h3 class="card-news__title">Midjourney</h3>
+                <p class="card-news__desc">최고 품질 AI 이미지 생성. 디테일한 텍스트 프롬프트로 아트 수준의 이미지를 만들어냅니다.</p>
+              </div>
+            </article>
+
+            <article class="card-news__slide">
+              <img class="card-news__img" src="https://images.pexels.com/photos/6953867/pexels-photo-6953867.jpeg?auto=compress&cs=tinysrgb&w=800&h=500&fit=crop" alt="ElevenLabs">
+              <div class="card-news__body">
+                <h3 class="card-news__title">ElevenLabs</h3>
+                <p class="card-news__desc">AI 음성 합성 & 더빙 전문. 29개 언어로 자연스러운 나레이션과 실시간 음성 변환을 제공합니다.</p>
+              </div>
+            </article>
+
           </div>
 
-          <div class="ai-tool-card" style="--float-delay: 0.3s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/7988086/pexels-photo-7988086.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Runway">
-            </div>
-            <h4 class="ai-tool-card__name">Runway</h4>
-            <p class="ai-tool-card__desc">실시간 AI 영상 편집</p>
-          </div>
+          <button class="card-news__arrow card-news__arrow--next" aria-label="다음">&#8250;</button>
 
-          <div class="ai-tool-card" style="--float-delay: 0.6s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/5473298/pexels-photo-5473298.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Pika">
-            </div>
-            <h4 class="ai-tool-card__name">Pika</h4>
-            <p class="ai-tool-card__desc">3초만에 AI 영상 생성</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 0.9s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/5952651/pexels-photo-5952651.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Kling">
-            </div>
-            <h4 class="ai-tool-card__name">Kling (클링)</h4>
-            <p class="ai-tool-card__desc">중국 최강 AI 영상 생성기</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 1.2s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/8438922/pexels-photo-8438922.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="VEO3">
-            </div>
-            <h4 class="ai-tool-card__name">VEO3</h4>
-            <p class="ai-tool-card__desc">구글의 차세대 영상 AI</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 1.5s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/6320/smartphone-vintage-technology-music.jpg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Suno AI">
-            </div>
-            <h4 class="ai-tool-card__name">Suno AI (수노)</h4>
-            <p class="ai-tool-card__desc">텍스트로 음악 자동 생성</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 1.8s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/8728380/pexels-photo-8728380.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="HiXField">
-            </div>
-            <h4 class="ai-tool-card__name">HiXField (힉스필드)</h4>
-            <p class="ai-tool-card__desc">물리 기반 AI 모션 생성</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 2.1s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="ComfyUI">
-            </div>
-            <h4 class="ai-tool-card__name">ComfyUI</h4>
-            <p class="ai-tool-card__desc">노드 기반 워크플로우</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 2.4s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/5082579/pexels-photo-5082579.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="CapCut">
-            </div>
-            <h4 class="ai-tool-card__name">CapCut</h4>
-            <p class="ai-tool-card__desc">AI 자동 편집 도구</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 2.7s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/8721342/pexels-photo-8721342.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="Midjourney">
-            </div>
-            <h4 class="ai-tool-card__name">Midjourney</h4>
-            <p class="ai-tool-card__desc">최고 품질 이미지 생성</p>
-          </div>
-
-          <div class="ai-tool-card" style="--float-delay: 3.0s">
-            <div class="ai-tool-card__img-wrap">
-              <img class="ai-tool-card__img" src="https://images.pexels.com/photos/6953867/pexels-photo-6953867.jpeg?auto=compress&cs=tinysrgb&w=200&h=200&fit=crop" alt="ElevenLabs">
-            </div>
-            <h4 class="ai-tool-card__name">ElevenLabs</h4>
-            <p class="ai-tool-card__desc">AI 음성 합성 & 더빙</p>
-          </div>
-
+          <div class="card-news__dots"></div>
         </div>
+
       </div>
     </section>
 

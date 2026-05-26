@@ -123,28 +123,56 @@ function initPhoneHover() {
   });
 }
 
-function initToolCards() {
-  const grid = document.querySelector('.ai-tools-grid');
-  if (!grid) return;
-  const cards = grid.querySelectorAll('.ai-tool-card');
+function initCardNews() {
+  const track = document.querySelector('.card-news__track');
+  if (!track) return;
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        cards.forEach((card, i) => {
-          setTimeout(() => card.classList.add('visible'), i * 100);
-        });
-        observer.disconnect();
-      }
+  const slides = track.querySelectorAll('.card-news__slide');
+  const prevBtn = document.querySelector('.card-news__arrow--prev');
+  const nextBtn = document.querySelector('.card-news__arrow--next');
+  const dotsContainer = document.querySelector('.card-news__dots');
+  let current = 0;
+  let autoTimer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'card-news__dot';
+    dot.setAttribute('aria-label', `슬라이드 ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    slides.forEach((s, i) => s.classList.toggle('active', i === current));
+    dotsContainer.querySelectorAll('.card-news__dot').forEach((d, i) => {
+      d.classList.toggle('active', i === current);
     });
-  }, { threshold: 0.2 });
+    resetAuto();
+  }
 
-  observer.observe(grid);
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 5000);
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+
+  let startX = 0;
+  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+  track.addEventListener('touchend', (e) => {
+    const diff = startX - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
+  });
+
+  goTo(0);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
   initPhoneHover();
-  initToolCards();
+  initCardNews();
 });
