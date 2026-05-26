@@ -123,8 +123,28 @@ function initPhoneHover() {
   });
 }
 
+function initToolCards() {
+  const grid = document.querySelector('.ai-tools-grid');
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.ai-tool-card');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('visible'), i * 100);
+        });
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.2 });
+
+  observer.observe(grid);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
   initPhoneHover();
+  initToolCards();
 });
