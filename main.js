@@ -176,9 +176,52 @@ function initCardStack() {
   goTo(0);
 }
 
+function initSpotlightSlider() {
+  const slider = document.querySelector('.spotlight__slider');
+  if (!slider) return;
+
+  const slides = slider.querySelectorAll('.spotlight__slide');
+  const dots = slider.querySelectorAll('.spotlight__dot');
+  if (slides.length < 2) return;
+
+  let current = 0;
+  let autoTimer;
+
+  function goTo(index) {
+    slides[current].classList.remove('spotlight__slide--active');
+    dots[current].classList.remove('spotlight__dot--active');
+    current = ((index % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('spotlight__slide--active');
+    dots[current].classList.add('spotlight__dot--active');
+  }
+
+  function startAuto() {
+    stopAuto();
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer);
+  }
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      stopAuto();
+      goTo(i);
+      startAuto();
+    });
+  });
+
+  slider.addEventListener('mouseenter', stopAuto);
+  slider.addEventListener('mouseleave', startAuto);
+
+  startAuto();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
   initPhoneHover();
   initCardStack();
+  initSpotlightSlider();
 });
