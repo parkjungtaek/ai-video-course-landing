@@ -1930,45 +1930,39 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
 .phone--left  { transform: translateY(0) rotate(-2deg) translateX(20px); z-index: 2; }
 .phone--right { transform: translateY(0) rotate(2deg) translateX(-20px); z-index: 2; }
 
-/* Phone screen backgrounds (placeholder gradients suggesting fashion/VR content) */
+/* Phone screen backgrounds — real images with subtle overlay */
 .phone__screen--A {
   background:
-    linear-gradient(180deg, #d8d8da 0%, #888a90 60%, #444 100%),
-    #888;
+    linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.4) 100%),
+    url('https://images.pexels.com/photos/7988079/pexels-photo-7988079.jpeg?auto=compress&cs=tinysrgb&w=600&h=1200&fit=crop') center/cover no-repeat;
 }
 .phone__screen--A::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(45% 70% at 50% 38%, rgba(0,0,0,0.85), transparent 65%),
-    linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.5) 100%);
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.6) 100%);
 }
 .phone__screen--B {
   background:
-    radial-gradient(60% 50% at 50% 50%, rgba(255,90,140,0.55), transparent 70%),
-    radial-gradient(80% 80% at 30% 60%, rgba(140,90,255,0.45), transparent 70%),
-    linear-gradient(180deg, #1a0c14 0%, #0a0a10 100%);
+    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.35) 100%),
+    url('https://images.pexels.com/photos/8721318/pexels-photo-8721318.jpeg?auto=compress&cs=tinysrgb&w=600&h=1200&fit=crop') center/cover no-repeat;
 }
 .phone__screen--B::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(40% 30% at 50% 28%, rgba(255,255,255,0.85), transparent 65%);
-  filter: blur(2px);
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
 }
 .phone__screen--C {
   background:
-    radial-gradient(60% 50% at 60% 30%, rgba(180,210,230,0.55), transparent 70%),
-    linear-gradient(180deg, #181820 0%, #050508 100%);
+    linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%),
+    url('https://images.pexels.com/photos/5473955/pexels-photo-5473955.jpeg?auto=compress&cs=tinysrgb&w=600&h=1200&fit=crop') center/cover no-repeat;
 }
 .phone__screen--C::before {
   content: "";
   position: absolute;
   inset: 0;
-  background:
-    radial-gradient(35% 25% at 50% 38%, rgba(20,20,30,0.85), transparent 65%);
+  background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
 }
 
 /* Neon ring on center phone */
