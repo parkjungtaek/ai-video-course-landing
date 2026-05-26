@@ -236,59 +236,49 @@
 
         <!-- ===== BENTO GRID ===== -->
         <div class="bento" role="list">
-          <!-- 1. Interface phone -->
+          <!-- 1. Interface phone — 프롬프트 타이핑 -->
           <article class="bento__card bento__card--interface" role="listitem">
             <div class="phone-mini" aria-hidden="true">
               <div class="phone-mini__notch"></div>
               <div class="phone-mini__screen phone-mini__screen--fashion">
-                <video class="slot-media" data-slot="bento-interface"
-                       loop muted autoplay playsinline preload="none">
-                  <!-- TODO[bento-interface]: 9:16, 3s loop, AI gen UI / fashion mood -->
-                  <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_webm/SLUG.webm" type="video/webm"> -->
-                  <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_mp4/SLUG.mp4" type="video/mp4"> -->
-                </video>
+                <div class="typing-overlay">
+                  <span class="typing-overlay__label">Prompt</span>
+                  <span class="typing-prompt" id="typing-prompt"></span>
+                </div>
                 <span class="phone-mini__time">07:20</span>
                 <span class="phone-mini__cam"></span>
               </div>
             </div>
-            <span class="bento__pill bento__pill--bl">Interface</span>
+            <span class="bento__pill bento__pill--bl">프롬프트 입력</span>
           </article>
 
           <!-- 2. Avatars row -->
           <article class="bento__card bento__card--avatars" role="listitem">
             <div class="avatar-row" aria-hidden="true">
-              <span class="av av-1"><img class="slot-media" data-slot="bento-avatar-1" alt="" /></span>
-              <span class="av av-2"><img class="slot-media" data-slot="bento-avatar-2" alt="" /></span>
-              <span class="av av-3"><img class="slot-media" data-slot="bento-avatar-3" alt="" /></span>
-              <span class="av av-4"><img class="slot-media" data-slot="bento-avatar-4" alt="" /></span>
-              <span class="av av-5"><img class="slot-media" data-slot="bento-avatar-5" alt="" /></span>
-              <span class="av av-6"><img class="slot-media" data-slot="bento-avatar-6" alt="" /></span>
-              <span class="av-plus">+42</span>
+              <span class="av av-1"></span>
+              <span class="av av-2"></span>
+              <span class="av av-3"></span>
+              <span class="av av-4"></span>
+              <span class="av av-5"></span>
+              <span class="av av-6"></span>
+              <span class="av-plus">+128</span>
             </div>
-            <!-- TODO[bento-avatar-1..6]: 1:1 AI-generated portraits (diverse) -->
-            <span class="bento__pill bento__pill--bl">함께 배우는 수강생</span>
+            <span class="bento__pill bento__pill--bl">1~3기 수료 128명</span>
           </article>
 
-          <!-- 3. Portrait collage -->
+          <!-- 3. Portrait collage — 4가지 AI 영상 스타일 -->
           <article class="bento__card bento__card--portraits" role="listitem">
             <div class="portrait-grid" aria-hidden="true">
-              <span class="portrait portrait--a"><img class="slot-media" data-slot="bento-portrait-a" alt="" /></span>
-              <span class="portrait portrait--b"><img class="slot-media" data-slot="bento-portrait-b" alt="" /></span>
-              <span class="portrait portrait--c"><img class="slot-media" data-slot="bento-portrait-c" alt="" /></span>
-              <span class="portrait portrait--d"><img class="slot-media" data-slot="bento-portrait-d" alt="" /></span>
+              <span class="portrait portrait--a"><span class="portrait__label">시네마틱</span></span>
+              <span class="portrait portrait--b"><span class="portrait__label">애니메</span></span>
+              <span class="portrait portrait--c"><span class="portrait__label">클레이</span></span>
+              <span class="portrait portrait--d"><span class="portrait__label">포토리얼</span></span>
             </div>
-            <!-- TODO[bento-portrait-a..d]: AI-generated character samples (cinematic / anime / clay / photoreal) -->
           </article>
 
-          <!-- 4. Center hero card (VR + ring) — ⭐ PRIORITY SLOT -->
+          <!-- 4. Center hero card (VR + ring) — 회전 링 + 펄스 -->
           <article class="bento__card bento__card--center" role="listitem">
             <div class="vr-stage" aria-hidden="true">
-              <video class="slot-media slot-media--hero" data-slot="bento-hero-center"
-                     loop muted autoplay playsinline preload="metadata">
-                <!-- TODO[bento-hero-center]: 3:4, 5s loop, creator silhouette + neon ring -->
-                <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_webm/hero-center.webm" type="video/webm"> -->
-                <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_mp4/hero-center.mp4" type="video/mp4"> -->
-              </video>
               <div class="vr-ring"></div>
               <div class="vr-person"></div>
               <div class="vr-glow"></div>
@@ -300,66 +290,62 @@
           <article class="bento__card bento__card--profile" role="listitem">
             <div class="profile-card">
               <div class="profile-card__head">
-                <span class="profile-card__avatar" aria-hidden="true">
-                  <img class="slot-media" data-slot="profile-avatar" alt="" />
-                  <!-- TODO[profile-avatar]: 1:1 instructor portrait -->
-                </span>
-                <button class="profile-card__menu" aria-label="More">
+                <span class="profile-card__avatar" aria-hidden="true"></span>
+                <button class="profile-card__menu" aria-label="더보기">
                   <svg width="14" height="14" viewBox="0 0 14 14"><path d="M2 5h10M2 9h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
                 </button>
               </div>
-              <strong class="profile-card__name">Sophie Laurent</strong>
-              <span class="profile-card__handle">@moneymaker</span>
-              <p class="profile-card__role">Lead AI Video Director · Studio Kubik</p>
+              <strong class="profile-card__name">박서연</strong>
+              <span class="profile-card__handle">@seoyeon.ai</span>
+              <p class="profile-card__role">AI 영상 크리에이터 · 前 네이버 영상 PD</p>
               <div class="profile-card__stats">
-                <span>41 Following</span>
+                <span>작품 312개</span>
                 <span class="dot"></span>
-                <span>21K Followers</span>
+                <span>수강생 2.4K</span>
               </div>
               <div class="profile-card__tabs">
-                <span class="tab-link tab-link--active">Items <em>(3K)</em></span>
-                <span class="tab-link">Spaces <em>(5)</em></span>
+                <span class="tab-link tab-link--active">작품 <em>(312)</em></span>
+                <span class="tab-link">강의 <em>(3)</em></span>
               </div>
               <div class="profile-card__thumbs" aria-hidden="true">
                 <span class="thumb thumb--a">
-                  <img class="slot-media" data-slot="profile-thumb-1" alt="" />
-                  <span class="thumb__no">967</span>
+                  <span class="thumb__no">1.2K</span>
                 </span>
                 <span class="thumb thumb--b">
-                  <img class="slot-media" data-slot="profile-thumb-2" alt="" />
-                  <span class="thumb__no">767</span>
+                  <span class="thumb__no">890</span>
                 </span>
               </div>
-              <!-- TODO[profile-thumb-1, profile-thumb-2]: 3:4 instructor work samples -->
             </div>
           </article>
 
-          <!-- 6. Category pills -->
+          <!-- 6. Category pills — 주차별 연관 -->
           <article class="bento__card bento__card--pills" role="listitem">
             <div class="cat-cloud" aria-hidden="true">
-              <span class="cat-pill cat-pill--olive">광고</span>
-              <span class="cat-pill cat-pill--amber">숏폼</span>
-              <span class="cat-pill cat-pill--steel">뮤직비디오</span>
-              <span class="cat-pill cat-pill--ink">제품</span>
-              <span class="cat-pill cat-pill--rose">캐릭터</span>
-              <span class="cat-pill cat-pill--olive">모션</span>
+              <span class="cat-pill cat-pill--olive">1주 · 광고</span>
+              <span class="cat-pill cat-pill--amber">2주 · 숏폼</span>
+              <span class="cat-pill cat-pill--steel">3주 · 뮤직비디오</span>
+              <span class="cat-pill cat-pill--ink">4주 · 제품</span>
+              <span class="cat-pill cat-pill--rose">5주 · 캐릭터</span>
+              <span class="cat-pill cat-pill--olive">보너스 · 모션</span>
             </div>
           </article>
 
-          <!-- 7. Flowers / counter -->
+          <!-- 7. Particles / counter -->
           <article class="bento__card bento__card--flowers" role="listitem">
             <div class="flowers" aria-hidden="true">
-              <video class="slot-media" data-slot="bento-flowers"
-                     loop muted autoplay playsinline preload="none">
-                <!-- TODO[bento-flowers]: 1:1, 3s loop, AI abstract art (blue/violet floral or data-stream) -->
-                <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_webm/flowers.webm" type="video/webm"> -->
-                <!-- <source src="https://res.cloudinary.com/CLOUD/video/upload/q_auto,f_mp4/flowers.mp4" type="video/mp4"> -->
-              </video>
               <span class="flower flower--a"></span>
               <span class="flower flower--b"></span>
               <span class="flower flower--c"></span>
+              <span class="particle particle--1"></span>
+              <span class="particle particle--2"></span>
+              <span class="particle particle--3"></span>
+              <span class="particle particle--4"></span>
+              <span class="particle particle--5"></span>
+              <span class="particle particle--6"></span>
+              <span class="particle particle--7"></span>
+              <span class="particle particle--8"></span>
             </div>
-            <span class="bento__count">127K</span>
+            <span class="bento__count" data-count="127000">0</span>
             <span class="bento__pill bento__pill--bl">생성된 영상</span>
           </article>
         </div>
