@@ -89,7 +89,42 @@ function initCountUp() {
   observer.observe(el);
 }
 
+function initPhoneHover() {
+  const phones = document.querySelectorAll('.phone');
+  if (!phones.length) return;
+
+  phones.forEach((phone) => {
+    const video = phone.querySelector('.phone__hover-video');
+    if (!video) return;
+
+    phone.addEventListener('mouseenter', () => {
+      video.currentTime = 0;
+      video.play().catch(() => {});
+    });
+
+    phone.addEventListener('mouseleave', () => {
+      video.pause();
+    });
+
+    // Mobile touch toggle
+    let active = false;
+    phone.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      active = !active;
+      if (active) {
+        phone.classList.add('phone--touched');
+        video.currentTime = 0;
+        video.play().catch(() => {});
+      } else {
+        phone.classList.remove('phone--touched');
+        video.pause();
+      }
+    }, { passive: false });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
+  initPhoneHover();
 });

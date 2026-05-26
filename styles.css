@@ -2019,6 +2019,152 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   50%      { transform: translateX(12%) skewX(4deg); }
 }
 
+/* ===== PHONE HOVER INTERACTIONS ===== */
+.phone {
+  transition: transform 0.45s cubic-bezier(0.23, 1, 0.32, 1),
+              box-shadow 0.45s ease,
+              opacity 0.4s ease,
+              filter 0.4s ease;
+  cursor: pointer;
+}
+
+.phone__hover-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  z-index: 5;
+  opacity: 0;
+  transform: scale(1.15);
+  transition: opacity 0.4s ease, transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+}
+
+.phone__hover-label {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: var(--fw-semibold);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(6, 182, 212, 0.5);
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(12px);
+  white-space: nowrap;
+  opacity: 0;
+  z-index: 10;
+  text-shadow: 0 0 12px rgba(6, 182, 212, 0.8);
+  transition: opacity 0.35s ease 0.1s, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1) 0.1s;
+}
+
+/* Hover state - bold expansion */
+.phone:hover {
+  z-index: 20 !important;
+}
+.phone--left:hover {
+  transform: scale(1.3) translateX(20px) rotate(0deg) !important;
+  box-shadow:
+    0 0 40px rgba(6, 182, 212, 0.5),
+    0 0 80px rgba(6, 182, 212, 0.25),
+    0 30px 80px -20px rgba(0, 0, 0, 0.8);
+}
+.phone--center:hover {
+  transform: scale(1.4) translateY(-40px) !important;
+  box-shadow:
+    0 0 50px rgba(255, 80, 140, 0.5),
+    0 0 100px rgba(255, 80, 140, 0.25),
+    0 0 30px rgba(6, 182, 212, 0.3),
+    0 40px 100px -20px rgba(0, 0, 0, 0.8);
+}
+.phone--right:hover {
+  transform: scale(1.3) translateX(-20px) rotate(0deg) !important;
+  box-shadow:
+    0 0 40px rgba(255, 150, 80, 0.5),
+    0 0 80px rgba(255, 150, 80, 0.25),
+    0 30px 80px -20px rgba(0, 0, 0, 0.8);
+}
+
+/* Reveal hover video */
+.phone:hover .phone__hover-video {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Show hover label */
+.phone:hover .phone__hover-label {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Hide pill on hover */
+.phone:hover .phone__pill {
+  opacity: 0;
+  transform: translateX(-50%) translateY(20px);
+  transition: opacity 0.25s ease, transform 0.3s ease;
+}
+.phone__pill {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Hide masks on hover (reveal video) */
+.phone:hover .phone__mask {
+  opacity: 0;
+  transform: translateX(120%) skewX(-8deg);
+  transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+.phone__mask {
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+/* Hide ring on hover */
+.phone:hover .phone__ring {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.phone__ring {
+  transition: opacity 0.4s ease;
+}
+
+/* Fade background gradient on hover */
+.phone:hover .phone__screen::before {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.phone__screen::before {
+  transition: opacity 0.4s ease;
+}
+
+/* Dim siblings when one is hovered */
+.phone-stage:hover .phone:not(:hover):not(.phone--touched),
+.phone-stage:has(.phone--touched) .phone:not(.phone--touched) {
+  opacity: 0.45;
+  filter: blur(2px) brightness(0.7);
+  transform: scale(0.92);
+}
+.phone--left:not(:hover):not(.phone--touched) {
+  transform: scale(0.92) rotate(-2deg) translateX(20px);
+}
+.phone--right:not(:hover):not(.phone--touched) {
+  transform: scale(0.92) rotate(2deg) translateX(-20px);
+}
+
+/* Mobile touch state mirrors hover */
+.phone--touched { z-index: 20 !important; }
+.phone--left.phone--touched { transform: scale(1.3) translateX(20px) rotate(0deg) !important; box-shadow: 0 0 40px rgba(6,182,212,0.5), 0 0 80px rgba(6,182,212,0.25), 0 30px 80px -20px rgba(0,0,0,0.8); }
+.phone--center.phone--touched { transform: scale(1.4) translateY(-40px) !important; box-shadow: 0 0 50px rgba(255,80,140,0.5), 0 0 100px rgba(255,80,140,0.25), 0 0 30px rgba(6,182,212,0.3), 0 40px 100px -20px rgba(0,0,0,0.8); }
+.phone--right.phone--touched { transform: scale(1.3) translateX(-20px) rotate(0deg) !important; box-shadow: 0 0 40px rgba(255,150,80,0.5), 0 0 80px rgba(255,150,80,0.25), 0 30px 80px -20px rgba(0,0,0,0.8); }
+.phone--touched .phone__hover-video { opacity: 1; transform: scale(1); }
+.phone--touched .phone__hover-label { opacity: 1; transform: translateX(-50%) translateY(0); }
+.phone--touched .phone__pill { opacity: 0; transform: translateX(-50%) translateY(20px); }
+.phone--touched .phone__mask { opacity: 0; transform: translateX(120%) skewX(-8deg); }
+.phone--touched .phone__ring { opacity: 0; }
+.phone--touched .phone__screen::before { opacity: 0; }
+
 /* CTA row */
 .ai-show__cta {
   margin-top: 80px;
