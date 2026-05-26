@@ -1,0 +1,15 @@
+{
+  "name": "ai-video-course-landing",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "AI 영상 교육과정 랜딩 페이지 — bolt-ready",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 4173"
+  },
+  "devDependencies": {
+    "vite": "^5.4.10"
+  }
+}
