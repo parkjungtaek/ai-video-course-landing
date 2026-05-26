@@ -123,46 +123,52 @@ function initPhoneHover() {
   });
 }
 
-function initCardNews() {
-  const track = document.querySelector('.card-news__track');
-  if (!track) return;
+function initCardStack() {
+  const viewport = document.querySelector('.card-stack__viewport');
+  if (!viewport) return;
 
-  const slides = track.querySelectorAll('.card-news__slide');
-  const prevBtn = document.querySelector('.card-news__arrow--prev');
-  const nextBtn = document.querySelector('.card-news__arrow--next');
-  const dotsContainer = document.querySelector('.card-news__dots');
+  const cards = [...viewport.querySelectorAll('.card-stack__card')];
+  const prevBtn = document.querySelector('.card-stack__arrow--prev');
+  const nextBtn = document.querySelector('.card-stack__arrow--next');
+  const total = cards.length;
   let current = 0;
   let autoTimer;
 
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'card-news__dot';
-    dot.setAttribute('aria-label', `슬라이드 ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
+  function updatePositions() {
+    cards.forEach((card, i) => {
+      let offset = i - current;
+      if (offset > Math.floor(total / 2)) offset -= total;
+      if (offset < -Math.floor(total / 2)) offset += total;
+
+      if (offset >= -2 && offset <= 2) {
+        card.setAttribute('data-pos', offset.toString());
+      } else {
+        card.setAttribute('data-pos', 'hidden');
+      }
+    });
+  }
 
   function goTo(index) {
-    current = (index + slides.length) % slides.length;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    slides.forEach((s, i) => s.classList.toggle('active', i === current));
-    dotsContainer.querySelectorAll('.card-news__dot').forEach((d, i) => {
-      d.classList.toggle('active', i === current);
-    });
+    current = ((index % total) + total) % total;
+    updatePositions();
     resetAuto();
   }
 
   function resetAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo(current + 1), 5000);
+    autoTimer = setInterval(() => goTo(current + 1), 4000);
   }
 
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
 
+  cards.forEach((card, i) => {
+    card.addEventListener('click', () => goTo(i));
+  });
+
   let startX = 0;
-  track.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
-  track.addEventListener('touchend', (e) => {
+  viewport.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+  viewport.addEventListener('touchend', (e) => {
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
   });
@@ -174,5 +180,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
   initPhoneHover();
-  initCardNews();
+  initCardStack();
 });
