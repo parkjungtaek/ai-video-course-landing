@@ -73,11 +73,11 @@
         </span>
 
         <h1 class="hero__title">
-          AI로 영상을 만드는<br />가장 빠른 시작
+          아이디어를 결과물로,<br />AI 영상 전문가 과정
         </h1>
 
         <p class="hero__subtitle">
-          Sora, Runway, Pika — 텍스트 한 줄이면 영상이 됩니다. 코딩 경험 없이도 5주 만에 나만의 AI 영상을 완성하는 실전 과정.
+          영상 경험이 없어도 괜찮습니다. 11개 AI 도구와 Adobe를 결합한 하이브리드 영상 제작으로 누구나 5종 이상의 전문 포트폴리오를 완성합니다.
         </p>
 
         <div class="hero__actions">
@@ -511,70 +511,108 @@
       </div>
     </section>
 
-    <!-- ============ FEATURES GRID (커리큘럼) ============ -->
+    <!-- ============ FEATURES / CURRICULUM ACCORDION ============ -->
     <section class="features" id="features">
       <div class="container">
         <div class="section-head">
           <span class="section-head__label">커리큘럼</span>
-          <h2 class="section-head__title">5주 안에 AI 영상 제작자가 됩니다</h2>
-          <p class="section-head__text">매주 실습 중심 라이브 수업. 결과물을 직접 만들면서 배우는 프로젝트 기반 과정입니다.</p>
+          <h2 class="section-head__title">아이디어를 결과물로, AI 영상 전문가 과정</h2>
+          <p class="section-head__text">영상 경험이 없어도 괜찮습니다. 11개 AI 도구와 Adobe를 결합한 하이브리드 영상 제작으로 누구나 5종 이상의 전문 포트폴리오를 완성합니다.</p>
         </div>
 
-        <ul class="feature-grid">
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="4" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h16M7 4V2M15 4V2M7 12h2M11 12h4M7 15h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        <div class="accordion">
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span class="accordion__number">01</span>
+              <span class="accordion__title">AI 기반 기획 및 전략</span>
+              <span class="accordion__desc">LLM 활용 시나리오 작성, 프롬프트 엔지니어링, 스토리보드 제작</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <div class="accordion__panel" aria-hidden="true">
+              <ul class="accordion__list">
+                <li>AI 영상 콘텐츠 기획 및 제작 기초</li>
+                <li>HTML/CSS 기초</li>
+                <li>AI 시각화 및 프롬프트 엔지니어링 입문</li>
+                <li>AI 이미지 생성 심화</li>
+              </ul>
             </div>
-            <h3>1주차 — AI 영상의 이해</h3>
-            <p>생성형 AI 영상의 원리, 주요 도구 비교, 프롬프트 작성법 기초를 익힙니다.</p>
-            <span class="feature-card__link">Sora · Runway · Pika 개요</span>
-          </li>
+          </div>
 
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M8 4L4 11l4 7M14 4l4 7-4 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span class="accordion__number">02</span>
+              <span class="accordion__title">생성형 AI 도구 마스터</span>
+              <span class="accordion__desc">Midjourney, Runway, Kling 등 8종 AI 도구로 이미지/영상 생성</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <div class="accordion__panel" aria-hidden="true">
+              <ul class="accordion__list">
+                <li>AI 영상 생성 도구 활용</li>
+                <li>AI 코딩 입문 및 개발환경 이해</li>
+                <li>AI 코딩 활용 JavaScript 기초</li>
+                <li>AI 코딩 활용 콘텐츠 제작 효율화 기초</li>
+                <li>공모전 기획 및 Comfy 고급 워크플로우</li>
+                <li>Video-to-Video 및 립싱크 AI 활용</li>
+              </ul>
             </div>
-            <h3>2주차 — 프롬프트 마스터</h3>
-            <p>프롬프트 구조화, 네거티브 프롬프트, 시네마틱 지시어로 원하는 결과를 뽑아냅니다.</p>
-            <span class="feature-card__link">실습: 광고 영상 컨셉 제작</span>
-          </li>
+          </div>
 
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M5 17L11 5l6 12H5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M11 11v3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span class="accordion__number">03</span>
+              <span class="accordion__title">하이브리드 영상 편집</span>
+              <span class="accordion__desc">After Effects, VFX 합성, 컬러그레이딩, 공모전 제작</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <div class="accordion__panel" aria-hidden="true">
+              <ul class="accordion__list">
+                <li>After Effects 모션그래픽 기초</li>
+                <li>After Effects 심화 및 공모전 제작</li>
+                <li>공모전 출품 및 스토리텔링 기획</li>
+                <li>VFX 합성 및 컬러그레이딩</li>
+              </ul>
             </div>
-            <h3>3주차 — 영상 스타일링</h3>
-            <p>카메라 워크, 조명, 색감 제어. 레퍼런스 이미지 활용과 스타일 트랜스퍼를 실습합니다.</p>
-            <span class="feature-card__link">실습: 뮤직비디오 클립 생성</span>
-          </li>
+          </div>
 
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M11 7v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span class="accordion__number">04</span>
+              <span class="accordion__title">실무 프로젝트 수행</span>
+              <span class="accordion__desc">AI 광고영상, 홍보영상, 단편영화/MV, 채널 브랜딩</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <div class="accordion__panel" aria-hidden="true">
+              <ul class="accordion__list">
+                <li>AI 광고 영상 제작 프로젝트</li>
+                <li>AI 홍보 영상 제작 (실사+AI 합성)</li>
+                <li>오디오 AI 활용 및 채널 브랜딩</li>
+                <li>유튜브 채널 개설 및 콘텐츠 업로드</li>
+                <li>단편영화/MV 제작 프로젝트</li>
+              </ul>
             </div>
-            <h3>4주차 — 편집과 후반 작업</h3>
-            <p>CapCut과 ComfyUI로 클립 연결, 자막, 사운드, 모션 그래픽까지 완성합니다.</p>
-            <span class="feature-card__link">실습: 숏폼 콘텐츠 완성</span>
-          </li>
+          </div>
 
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 11l5 5 9-10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="accordion__item">
+            <button class="accordion__trigger" aria-expanded="false">
+              <span class="accordion__number">05</span>
+              <span class="accordion__title">기술 융합 및 자동화</span>
+              <span class="accordion__desc">Lovable 웹개발, Claude Code 자동화, 포트폴리오 웹페이지 구축</span>
+              <svg class="accordion__chevron" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+            </button>
+            <div class="accordion__panel" aria-hidden="true">
+              <ul class="accordion__list">
+                <li>AI 코딩 활용 콘텐츠 배치 처리 및 자동화 (기초+실습)</li>
+                <li>포트폴리오 전략 수립 및 기획</li>
+                <li>Lovable 입문 / 프로토타입 / 웹페이지 제작</li>
+                <li>포트폴리오 제작 및 1:1 멘토링</li>
+                <li>Claude Code 활용 워크플로우 자동화 심화</li>
+                <li>포트폴리오 웹페이지 완성 및 배포</li>
+                <li>최종 포트폴리오 완성 및 퀄리티 업</li>
+                <li>최종 시사회 및 성과발표</li>
+              </ul>
             </div>
-            <h3>5주차 — 포트폴리오 완성</h3>
-            <p>나만의 AI 영상 포트폴리오를 제작하고, 피드백 세션을 통해 퀄리티를 높입니다.</p>
-            <span class="feature-card__link">최종 결과물 발표 + 수료</span>
-          </li>
-
-          <li class="feature-card">
-            <div class="feature-card__icon" aria-hidden="true">
-              <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="12" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </div>
-            <h3>보너스 — 수익화 전략</h3>
-            <p>유튜브, 인스타그램 릴스, 프리랜서 마켓까지. AI 영상으로 수익을 만드는 실전 가이드.</p>
-            <span class="feature-card__link">커리어 로드맵 제공</span>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
 

@@ -176,9 +176,34 @@ function initCardStack() {
   goTo(0);
 }
 
+function initAccordion() {
+  const items = document.querySelectorAll('.accordion__item');
+  if (!items.length) return;
+
+  items.forEach((item) => {
+    const trigger = item.querySelector('.accordion__trigger');
+    trigger.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      items.forEach((other) => {
+        other.classList.remove('is-open');
+        other.querySelector('.accordion__trigger').setAttribute('aria-expanded', 'false');
+        other.querySelector('.accordion__panel').setAttribute('aria-hidden', 'true');
+      });
+
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+        item.querySelector('.accordion__panel').setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initTypingEffect();
   initCountUp();
   initPhoneHover();
   initCardStack();
+  initAccordion();
 });
