@@ -404,8 +404,30 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   letter-spacing: -0.011em;
 }
 
+.hero__badges {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: var(--fw-medium);
+  color: var(--color-accent);
+  background: rgba(6, 182, 212, 0.08);
+  border: 1px solid rgba(6, 182, 212, 0.2);
+  border-radius: 100px;
+  letter-spacing: -0.01em;
+}
+
 .hero__actions {
-  margin-top: 36px;
+  margin-top: 28px;
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -1291,6 +1313,7 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   .hero .eyebrow,
   .hero__title,
   .hero__subtitle,
+  .hero__badges,
   .hero__actions,
   .hero__visual {
     opacity: 0;
@@ -1300,8 +1323,9 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   .hero .eyebrow    { animation-delay: 0.05s; }
   .hero__title      { animation-delay: 0.15s; }
   .hero__subtitle   { animation-delay: 0.25s; }
-  .hero__actions    { animation-delay: 0.35s; }
-  .hero__visual     { animation-delay: 0.45s; transform: translateY(28px); }
+  .hero__badges     { animation-delay: 0.32s; }
+  .hero__actions    { animation-delay: 0.40s; }
+  .hero__visual     { animation-delay: 0.50s; transform: translateY(28px); }
 
   @keyframes rise {
     to { opacity: 1; transform: translateY(0); }
