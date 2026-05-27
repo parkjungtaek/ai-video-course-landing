@@ -439,14 +439,6 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   margin-bottom: 4px;
 }
 
-.hero__subtitle {
-  margin: 24px auto 0;
-  max-width: 600px;
-  font-size: clamp(15px, 1.4vw, 18px);
-  line-height: 1.55;
-  color: var(--color-text-tertiary);
-  letter-spacing: -0.011em;
-}
 
 .hero__badges {
   margin-top: 24px;
@@ -510,43 +502,6 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
 }
 .hero__actions .btn--primary { height: 40px; padding: 0 22px; font-size: 15px; font-weight: var(--fw-semibold); }
 
-.hero__stats {
-  margin-top: 40px;
-  display: inline-flex;
-  align-items: center;
-  gap: 0;
-  border: 1px solid var(--color-border-subtle);
-  border-radius: var(--radius-xl);
-  background: var(--color-surface-04);
-  overflow: hidden;
-}
-.hero__stat {
-  padding: 16px 32px;
-  text-align: center;
-  position: relative;
-}
-.hero__stat + .hero__stat::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 20%;
-  height: 60%;
-  width: 1px;
-  background: var(--color-border-subtle);
-}
-.hero__stat strong {
-  display: block;
-  font-size: clamp(22px, 2.5vw, 28px);
-  font-weight: var(--fw-semibold);
-  color: var(--color-text-primary);
-  letter-spacing: -0.02em;
-}
-.hero__stat span {
-  font-size: 12px;
-  color: var(--color-text-tertiary);
-  margin-top: 2px;
-  display: block;
-}
 
 /* Hero AI Tools Marquee */
 .hero__tools {
@@ -1487,11 +1442,9 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: no-preference) {
   .hero .eyebrow,
   .hero__title,
-  .hero__subtitle,
   .hero__badges,
   .hero__urgency,
   .hero__actions,
-  .hero__stats,
   .hero__tools,
   .hero__visual {
     opacity: 0;
@@ -1500,13 +1453,11 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   }
   .hero .eyebrow    { animation-delay: 0.05s; }
   .hero__title      { animation-delay: 0.15s; }
-  .hero__subtitle   { animation-delay: 0.25s; }
-  .hero__badges     { animation-delay: 0.32s; }
-  .hero__urgency    { animation-delay: 0.38s; }
-  .hero__actions    { animation-delay: 0.44s; }
-  .hero__stats      { animation-delay: 0.52s; }
-  .hero__tools      { animation-delay: 0.60s; }
-  .hero__visual     { animation-delay: 0.70s; transform: translateY(28px); }
+  .hero__badges     { animation-delay: 0.25s; }
+  .hero__urgency    { animation-delay: 0.32s; }
+  .hero__actions    { animation-delay: 0.38s; }
+  .hero__tools      { animation-delay: 0.46s; }
+  .hero__visual     { animation-delay: 0.56s; transform: translateY(28px); }
 
   @keyframes rise {
     to { opacity: 1; transform: translateY(0); }
@@ -1551,9 +1502,6 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
   .hero { padding: 56px 0 48px; }
   .hero__actions { width: 100%; flex-direction: column; align-items: stretch; }
   .hero__actions .btn { width: 100%; }
-  .hero__stats { flex-direction: row; gap: 0; width: 100%; }
-  .hero__stat { padding: 14px 16px; flex: 1; }
-  .hero__stat strong { font-size: 20px; }
   .announce-bar__inner { font-size: 12px; gap: 6px; }
   .marquee__card { min-width: 120px; padding: 12px 18px; }
   .marquee__card img { width: 100px; height: 40px; }
