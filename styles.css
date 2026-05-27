@@ -1343,7 +1343,7 @@ body > *:not(.bg-decor) { position: relative; z-index: 1; }
 
 .outcome-card__visual {
   position: relative;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 .outcome-card__visual img {
