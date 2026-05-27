@@ -176,6 +176,45 @@ function initCardStack() {
   goTo(0);
 }
 
+function initTestimonialCarousel() {
+  const slides = document.querySelectorAll('.testimonial__slide');
+  const dotsContainer = document.querySelector('.testimonial__dots');
+  const prevBtn = document.querySelector('.testimonial__arrow--prev');
+  const nextBtn = document.querySelector('.testimonial__arrow--next');
+  if (!slides.length || !dotsContainer) return;
+
+  let current = 0;
+  let autoTimer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'testimonial__dot' + (i === 0 ? ' is-active' : '');
+    dot.setAttribute('aria-label', `후기 ${i + 1}`);
+    dot.addEventListener('click', () => goTo(i));
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll('.testimonial__dot');
+
+  function goTo(index) {
+    slides[current].classList.remove('is-active');
+    dots[current].classList.remove('is-active');
+    current = ((index % slides.length) + slides.length) % slides.length;
+    slides[current].classList.add('is-active');
+    dots[current].classList.add('is-active');
+    resetAuto();
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    autoTimer = setInterval(() => goTo(current + 1), 6000);
+  }
+
+  prevBtn.addEventListener('click', () => goTo(current - 1));
+  nextBtn.addEventListener('click', () => goTo(current + 1));
+  resetAuto();
+}
+
 function initAccordion() {
   const items = document.querySelectorAll('.accordion__item');
   if (!items.length) return;
@@ -206,4 +245,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initPhoneHover();
   initCardStack();
   initAccordion();
+  initTestimonialCarousel();
 });
